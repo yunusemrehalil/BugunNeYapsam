@@ -1,4 +1,4 @@
-package com.nomaddeveloper.toasterlibrary
+package com.nomaddeveloper.accessmanager
 
 import org.junit.Test
 

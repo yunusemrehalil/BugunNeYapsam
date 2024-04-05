@@ -1,10 +1,10 @@
-package com.nomaddeveloper.toasterlibrary
+package com.nomaddeveloper.yunusloginclient.util
 
 import android.content.Context
 import android.widget.Toast
 
-class ToasterMessage {
-    fun toast(context: Context, message: String){
+class ToastUtil {
+    fun makeToast(context: Context, message: String) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 }

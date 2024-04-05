@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "YunusLoginClient"
 include(":app")
-include(":ToasterLibrary")
+include(":LoginClient")
