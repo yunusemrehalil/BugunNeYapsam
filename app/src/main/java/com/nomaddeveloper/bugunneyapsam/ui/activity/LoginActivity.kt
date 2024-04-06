@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
-import com.nomaddeveloper.accessmanager.AccessManager
+import com.nomaddeveloper.baseloginclient.AccessManager
 import com.nomaddeveloper.bugunneyapsam.BuildConfig
 import com.nomaddeveloper.bugunneyapsam.databinding.ActivityLoginBinding
 import com.nomaddeveloper.bugunneyapsam.util.ToastUtil
