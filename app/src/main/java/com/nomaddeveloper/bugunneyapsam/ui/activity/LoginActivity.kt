@@ -1,4 +1,4 @@
-package com.nomaddeveloper.yunusloginclient
+package com.nomaddeveloper.bugunneyapsam.ui.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -8,8 +8,9 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.nomaddeveloper.accessmanager.AccessManager
-import com.nomaddeveloper.yunusloginclient.databinding.ActivityLoginBinding
-import com.nomaddeveloper.yunusloginclient.util.ToastUtil
+import com.nomaddeveloper.bugunneyapsam.BuildConfig
+import com.nomaddeveloper.bugunneyapsam.databinding.ActivityLoginBinding
+import com.nomaddeveloper.bugunneyapsam.util.ToastUtil
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityLoginBinding
@@ -40,7 +41,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
 
     private fun prepareUI() {
         binding.apply {

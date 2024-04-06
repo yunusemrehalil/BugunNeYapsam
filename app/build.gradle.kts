@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.nomaddeveloper.yunusloginclient"
+    namespace = "com.nomaddeveloper.bugunneyapsam"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.nomaddeveloper.yunusloginclient"
-        minSdk = 23
+        applicationId = "com.nomaddeveloper.bugunneyapsam"
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

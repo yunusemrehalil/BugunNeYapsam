@@ -1,4 +1,4 @@
-package com.nomaddeveloper.yunusloginclient.util
+package com.nomaddeveloper.bugunneyapsam.util
 
 import android.content.Context
 import android.widget.Toast

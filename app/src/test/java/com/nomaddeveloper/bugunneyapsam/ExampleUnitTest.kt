@@ -1,4 +1,4 @@
-package com.nomaddeveloper.yunusloginclient
+package com.nomaddeveloper.bugunneyapsam
 
 import org.junit.Test
 
