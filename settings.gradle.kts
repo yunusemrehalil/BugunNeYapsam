@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "YunusLoginClient"
+rootProject.name = "BugunNeYapsam"
 include(":app")
