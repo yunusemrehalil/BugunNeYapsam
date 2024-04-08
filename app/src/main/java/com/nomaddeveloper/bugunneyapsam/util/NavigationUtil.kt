@@ -11,11 +11,23 @@ import com.nomaddeveloper.bugunneyapsam.ui.fragment.SuggestionsFragment
 
 class NavigationUtil(private val fragmentManager: FragmentManager) {
 
-    fun navigateToFragment(fragment: Fragment): Boolean {
-        fragmentManager.beginTransaction()
-            .replace(R.id.layout_container, fragment)
-            .commit()
-        return true
+    private fun replaceFragment(fragment: Fragment, addToBackStack: Boolean) {
+        val transaction = fragmentManager.beginTransaction()
+        transaction.setCustomAnimations(
+            R.anim.slide_in_right_fragment_anim,
+            R.anim.slide_out_right_fragment_anim,
+            R.anim.slide_in_left_fragment_anim,
+            R.anim.slide_out_left_fragment_anim
+        )
+        transaction.replace(R.id.fragment_container, fragment)
+        if (addToBackStack) {
+            transaction.addToBackStack(null)
+        }
+        transaction.commit()
+    }
+
+    fun navigateToFragment(fragment: Fragment) {
+        replaceFragment(fragment, addToBackStack = false)
     }
 
     fun bottomNavToFragment(menuItem: MenuItem): Boolean {
@@ -26,9 +38,7 @@ class NavigationUtil(private val fragmentManager: FragmentManager) {
             R.id.bottom_nav_bookmarks -> BookmarksFragment()
             else -> return false
         }
-        fragmentManager.beginTransaction()
-            .replace(R.id.layout_container, fragment)
-            .commit()
+        replaceFragment(fragment, addToBackStack = false)
         return true
     }
 }

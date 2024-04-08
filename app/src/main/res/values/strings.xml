@@ -15,4 +15,7 @@
     <string name="bottom_nav_suggestions">Suggestions</string>
     <string name="bottom_nav_profile">Profile</string>
     <string name="bottom_nav_bookmarks">Bookmarks</string>
+    <!-- Test Items -->
+    <string name="test_item">Item Test</string>
+    <string name="calorie_format">350</string>
 </resources>

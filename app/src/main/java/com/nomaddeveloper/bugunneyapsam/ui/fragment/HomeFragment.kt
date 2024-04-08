@@ -1,60 +1,84 @@
 package com.nomaddeveloper.bugunneyapsam.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.nomaddeveloper.bugunneyapsam.R
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
+import com.nomaddeveloper.bugunneyapsam.adapter.MealRecyclerAdapter
+import com.nomaddeveloper.bugunneyapsam.databinding.FragmentHomeBinding
+import com.nomaddeveloper.bugunneyapsam.model.MealModel
+import com.nomaddeveloper.bugunneyapsam.util.ImageLoaderUtil
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var mealRecyclerView: RecyclerView
+    private lateinit var mealAdapter: MealRecyclerAdapter
+    private lateinit var imageLoader: ImageLoaderUtil
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+        imageLoader = ImageLoaderUtil()
+        mealRecyclerView = binding.rvHomeFragmentMeals
+        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(mealRecyclerView)
+        mealRecyclerView.layoutManager = layoutManager
+        mealAdapter = MealRecyclerAdapter(mealList = createMealList(), imageLoader = imageLoader)
+        mealRecyclerView.adapter = mealAdapter
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun createMealList(): ArrayList<MealModel> {
+        return arrayListOf(
+            MealModel(
+                1,
+                "Mercimek Çorbası",
+                "https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg",
+                4.0,
+                300
+            ),
+            MealModel(
+                2,
+                "Soslu Makarna",
+                "https://images.pexels.com/photos/1487511/pexels-photo-1487511.jpeg",
+                3.2,
+                500
+            ),
+            MealModel(
+                3,
+                "Salata Tabağı",
+                "https://images.pexels.com/photos/406152/pexels-photo-406152.jpeg",
+                3.8,
+                120
+            ),
+            MealModel(
+                4,
+                "Menemen",
+                "https://images.pexels.com/photos/1854037/pexels-photo-1854037.jpeg",
+                3.6,
+                480
+            ),
+            MealModel(
+                5,
+                "Tavuk Şnitzel",
+                "https://images.pexels.com/photos/1352270/pexels-photo-1352270.jpeg",
+                3.3,
+                400
+            ),
+            MealModel(
+                6,
+                "Domates Soslu Makarna",
+                "https://images.pexels.com/photos/14737/pexels-photo.jpg",
+                3.4,
+                480
+            )
+        )
     }
 }
