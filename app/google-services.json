@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "55277093382",
+    "project_id": "bugun-ne-giysem-90ef6",
+    "storage_bucket": "bugun-ne-giysem-90ef6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55277093382:android:d65c9b907408a9a2f1f987",
+        "android_client_info": {
+          "package_name": "com.nomaddeveloper.bugunneyapsam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4W0nrSStQpvcI9v2D6SPbofGpmh0nYr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55277093382:android:ab71e3bfed99ad77f1f987",
+        "android_client_info": {
+          "package_name": "com.nomaddeveloper.bugunneyapsam.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4W0nrSStQpvcI9v2D6SPbofGpmh0nYr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

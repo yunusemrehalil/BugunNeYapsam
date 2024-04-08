@@ -18,4 +18,6 @@
     <!-- Test Items -->
     <string name="test_item">Item Test</string>
     <string name="calorie_format">350</string>
+    <!-- Firebase Crashlytics Build ID Error -->
+    <string name="com.crashlytics.android.build_id">none</string>
 </resources>
