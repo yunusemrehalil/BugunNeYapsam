@@ -7,11 +7,12 @@ import com.nomaddeveloper.bugunneyapsam.R
 import com.nomaddeveloper.bugunneyapsam.model.MealModel
 import com.nomaddeveloper.bugunneyapsam.util.ImageLoaderUtil
 
-class MealRecyclerAdapter(private val mealList: ArrayList<MealModel>, private val imageLoader: ImageLoaderUtil) : RecyclerView.Adapter<MealViewHolder>() {
+class MealRecyclerAdapter(private val mealList: ArrayList<MealModel>) :
+    RecyclerView.Adapter<MealViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_view_item_home_fragment, parent, false)
-        return MealViewHolder(view, imageLoader = imageLoader)
+        return MealViewHolder(view)
     }
 
     override fun getItemCount(): Int {

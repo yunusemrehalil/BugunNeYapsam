@@ -8,8 +8,9 @@ import com.nomaddeveloper.bugunneyapsam.R
 import com.nomaddeveloper.bugunneyapsam.model.MealModel
 import com.nomaddeveloper.bugunneyapsam.util.ImageLoaderUtil
 
-class MealViewHolder(itemView: View, private val imageLoader: ImageLoaderUtil) :
+class MealViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
+    private val imageLoader = ImageLoaderUtil()
     private val mealImageView: ImageView = itemView.findViewById(R.id.iv_adapter_meal_photo)
     private val mealRatingTextView: TextView = itemView.findViewById(R.id.tv_adapter_meal_rating)
     private val mealNameTextView: TextView = itemView.findViewById(R.id.tv_adapter_meal_name)

@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
         val snapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(mealRecyclerView)
         mealRecyclerView.layoutManager = layoutManager
-        mealAdapter = MealRecyclerAdapter(mealList = createMealList(), imageLoader = imageLoader)
+        mealAdapter = MealRecyclerAdapter(mealList = createMealList())
         mealRecyclerView.adapter = mealAdapter
 
         return binding.root
