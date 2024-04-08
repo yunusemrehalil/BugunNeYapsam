@@ -22,11 +22,13 @@ android {
             dimension = "version"
             applicationIdSuffix = ".dev"
             buildConfigField("boolean", "TEST_ENABLED", "true")
-        }
+            resValue("string", "app_name", "\"Bugün ne yapsam Dev\"")
+    }
         create("prod") {
             dimension = "version"
             applicationIdSuffix = ".prod"
             buildConfigField("boolean", "TEST_ENABLED", "false")
+            resValue("string", "app_name", "\"Bugün ne yapsam\"")
         }
 
     }
@@ -81,18 +83,7 @@ dependencies {
     //Test Implementations
     testImplementation("junit:junit:4.13.2")
     testImplementation("androidx.test.ext:junit:1.1.5")
-    testImplementation("androidx.test:core:1.5.0")
-    testImplementation("androidx.test:runner:1.5.2")
-    testImplementation("androidx.test:rules:1.5.0")
-    testImplementation("androidx.arch.core:core-testing:2.2.0")
-    testImplementation("org.mockito:mockito-core:3.12.4")
-    testImplementation("org.robolectric:robolectric:4.12.1")
+    testImplementation("com.google.truth:truth:1.4.2")
     androidTestImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test:core:1.5.0")
-    androidTestImplementation("androidx.test:runner:1.5.2")
-    androidTestImplementation("androidx.test:rules:1.5.0")
-    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
-    androidTestImplementation("org.mockito:mockito-core:3.12.4")
-    androidTestImplementation("org.robolectric:robolectric:4.12.1")
 }
