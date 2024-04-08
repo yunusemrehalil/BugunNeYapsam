@@ -4,16 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.nomaddeveloper.bugunneyapsam.BaseFragment
 import com.nomaddeveloper.bugunneyapsam.adapter.MealRecyclerAdapter
 import com.nomaddeveloper.bugunneyapsam.databinding.FragmentHomeBinding
 import com.nomaddeveloper.bugunneyapsam.model.MealModel
 import com.nomaddeveloper.bugunneyapsam.util.ImageLoaderUtil
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var mealRecyclerView: RecyclerView
     private lateinit var mealAdapter: MealRecyclerAdapter

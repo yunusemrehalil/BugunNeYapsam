@@ -5,14 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import com.nomaddeveloper.bugunneyapsam.BaseActivity
 import com.nomaddeveloper.baseloginclient.AccessManager
 import com.nomaddeveloper.bugunneyapsam.BuildConfig
 import com.nomaddeveloper.bugunneyapsam.databinding.ActivityLoginBinding
 import com.nomaddeveloper.bugunneyapsam.util.ToastUtil
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener {
+class LoginActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText

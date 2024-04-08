@@ -1,14 +1,14 @@
 package com.nomaddeveloper.bugunneyapsam.ui.activity
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.nomaddeveloper.bugunneyapsam.BaseActivity
 import com.nomaddeveloper.bugunneyapsam.R
 import com.nomaddeveloper.bugunneyapsam.databinding.ActivityMainBinding
 import com.nomaddeveloper.bugunneyapsam.ui.fragment.HomeFragment
 import com.nomaddeveloper.bugunneyapsam.util.NavigationUtil
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var navigationUtil: NavigationUtil

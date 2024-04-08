@@ -1,6 +1,9 @@
+import org.jetbrains.kotlin.de.undercouch.gradle.tasks.download.org.apache.commons.logging.LogFactory.release
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -16,30 +19,35 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-    flavorDimensions += "version"
+
+        flavorDimensions += "version"
     productFlavors {
         create("dev") {
             dimension = "version"
             applicationIdSuffix = ".dev"
             buildConfigField("boolean", "TEST_ENABLED", "true")
-            resValue("string", "app_name", "\"Bugün ne yapsam Dev\"")
-    }
+            resValue("string", "app_name", "\"Dev Bugün ne yapsam\"")
+        }
         create("prod") {
             dimension = "version"
-            applicationIdSuffix = ".prod"
             buildConfigField("boolean", "TEST_ENABLED", "false")
             resValue("string", "app_name", "\"Bugün ne yapsam\"")
         }
-
     }
 
     buildTypes {
+        debug {
+            manifestPlaceholders["crashlyticsEnabled"] = false
+        }
         release {
+            manifestPlaceholders += mapOf()
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug") // TODO() create config file for debug and release with ext .jks
+            manifestPlaceholders["crashlyticsEnabled"] = true
         }
     }
     compileOptions {
@@ -53,18 +61,6 @@ android {
         viewBinding = true
         buildConfig = true
     }
-
-    testOptions {
-        unitTests {
-            unitTests.isReturnDefaultValues = true
-        }
-    }
-}
-tasks.withType(type = org.jetbrains.kotlin.gradle.tasks.KaptGenerateStubs::class) {
-    kotlinOptions.jvmTarget = "11"
-}
-configurations.all {
-    resolutionStrategy.force("junit:junit:4.13.2")
 }
 dependencies {
 
@@ -79,7 +75,10 @@ dependencies {
     implementation(files("./libs/BaseLoginClient.aar"))
     //Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
-    implementation("com.android.volley:volley:1.2.1")
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
     //Test Implementations
     testImplementation("junit:junit:4.13.2")
     testImplementation("androidx.test.ext:junit:1.1.5")
